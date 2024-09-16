@@ -50,5 +50,7 @@ while True:
         base.append_row('Table1', {"xxx":"xxx"})
         ...
     except AuthExpiredError:
-       base.auth()
+        base.auth()
+        continue # Retry entire try block
+    break # Break out of while loop once try block has executed without exception
 ```
